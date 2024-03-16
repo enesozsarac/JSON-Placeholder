@@ -54,7 +54,7 @@ body {
   width: 100%;
   border-radius: 5px;
   color: aliceblue;
-  font-size: 1.1rem
+  font-size: 1.1rem;
 }
 
 .buttonContainer button {
@@ -79,5 +79,5 @@ body {
   right: 35px;
   padding: 5px;
   color: aliceblue;
-  
+  font-size: 1rem;
 }
