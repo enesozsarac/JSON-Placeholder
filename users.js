@@ -17,9 +17,9 @@ function createCards(user) {
         <h5>ID:${user.id}</h5>
        </div>
         <div class="buttonContainer">
-          <button onclick = "showBtn(${user.id}, 'address')"><i class="fa-solid fa-location-dot"></i></button>
-          <button onclick = "showBtn(${user.id}, 'company')"><i class="fa-regular fa-building"></i></i></button>
-          <button onclick = "showBtn(${user.id}, 'contact')"><i class="fa-regular fa-envelope"></i></i></button>
+          <button class="addressBtn" onclick = "showBtn(${user.id}, 'address')"><i class="fa-solid fa-location-dot"></i></button>
+          <button class="companyBtn" onclick = "showBtn(${user.id}, 'company')"><i class="fa-regular fa-building"></i></i></button>
+          <button class="contactBtn" onclick = "showBtn(${user.id}, 'contact')"><i class="fa-regular fa-envelope"></i></i></button>
           <a href="post.html?userId=${user.id}"><button><i class="fa-solid fa-comment"></i></button></a>
         </div>
         <div class="content row">
@@ -74,11 +74,14 @@ function showBtn(id, type) {
 
   if (types.includes(type)) {
     const elements = document.querySelectorAll(`.${type}`);
+    const button = document.querySelectorAll(`.${type}Btn`);
     if (elements.length > 0 && elements[id - 1]) {
       if (elements[id - 1].classList.contains("display")) {
         elements[id - 1].classList.remove("display");
+        button[id - 1].classList.add("focusEffect");
       } else {
         elements[id - 1].classList.add("display");
+        button[id - 1].classList.remove("focusEffect");
       }
     }
   }

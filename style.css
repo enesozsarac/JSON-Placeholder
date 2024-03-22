@@ -65,6 +65,7 @@ body {
   color: aliceblue;
   background: transparent;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .display {
@@ -72,6 +73,6 @@ body {
 }
 
 .focusEffect {
-  background-color: aliceblue;
-  color: rgb(28, 28, 28);
+  background-color: aliceblue !important;
+  color: rgb(28, 28, 28) !important;
 }
