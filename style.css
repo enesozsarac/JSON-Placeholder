@@ -71,12 +71,7 @@ body {
   display: none;
 }
 
-.closeBtn {
-  background: transparent;
-  border: none;
-  position: absolute;
-  right: 35px;
-  padding: 5px;
-  color: aliceblue;
-  font-size: 1rem;
+.focusEffect {
+  background-color: aliceblue;
+  color: rgb(28, 28, 28);
 }

@@ -24,20 +24,17 @@ function createCards(user) {
         </div>
         <div class="content row">
           <div class="address display">
-            <button class="closeBtn" onclick = "closeBtn(${user.id}, 'address')"><i class="fa-solid fa-x"></i></button>
             Street:${user.address.street}<br>
             Suite:${user.address.suite}<br>
             City:${user.address.city}<br>
             Zipcode:${user.address.zipcode}<br>
           </div>
           <div class="company display">
-            <button class="closeBtn" onclick = "closeBtn(${user.id},'company')"><i class="fa-solid fa-x"></i></button>
             Name: ${user.company.name}<br>
             CatchPhrase: ${user.company.catchPhrase}<br>
             Bs: ${user.company.bs}<br>
           </div>
           <div class="contact display">
-            <button class="closeBtn" onclick = "closeBtn(${user.id},'contact')"><i class="fa-solid fa-x"></i></button>
             E-mail: ${user.email}<br>
             Phone: ${user.phone}<br>
             Website: ${user.website}<br>
@@ -48,30 +45,41 @@ function createCards(user) {
 
 getUser();
 
-function showBtn(id, btn) {
-  if (btn === "address") {
-    const address = document.querySelectorAll(".address");
-    address[id - 1].classList.remove("display");
-  } else if (btn === "company") {
-    const btn = document.querySelectorAll(".company");
-    btn[id - 1].classList.remove("display");
-  } else if (btn === "contact") {
-    const btn = document.querySelectorAll(".contact");
-    btn[id - 1].classList.remove("display");
+function showBtn(id, type) {
+  // if (btn === "address") {
+  //   const btn = document.querySelectorAll(".address");
+  //   if (btn[id - 1].classList.contains("display")) {
+  //     btn[id - 1].classList.remove("display");
+  //   } else {
+  //     btn[id - 1].classList.add("display");
+  //   }
+  // } else if (btn === "company") {
+  //   const btn = document.querySelectorAll(".company");
+  //   if (btn[id - 1].classList.contains("display")) {
+  //     btn[id - 1].classList.remove("display");
+  //   } else {
+  //     btn[id - 1].classList.add("display");
+  //   }
+  // } else if (btn === "contact") {
+  //   const btn = document.querySelectorAll(".contact");
+
+  //   if (btn[id - 1].classList.contains("display")) {
+  //     btn[id - 1].classList.remove("display");
+  //   } else {
+  //     btn[id - 1].classList.add("display");
+  //   }
+  // }
+
+  const types = ["address", "company", "contact"];
+
+  if (types.includes(type)) {
+    const elements = document.querySelectorAll(`.${type}`);
+    if (elements.length > 0 && elements[id - 1]) {
+      if (elements[id - 1].classList.contains("display")) {
+        elements[id - 1].classList.remove("display");
+      } else {
+        elements[id - 1].classList.add("display");
+      }
+    }
   }
 }
-
-function closeBtn(id, btn) {
-  if (btn === "address") {
-    const btn = document.querySelectorAll(".address");
-    btn[id - 1].classList.add("display");
-  } else if (btn === "company") {
-    const btn = document.querySelectorAll(".company");
-    btn[id - 1].classList.add("display");
-  } else if (btn === "contact") {
-    const btn = document.querySelectorAll(".contact");
-    btn[id - 1].classList.add("display");
-  }
-}
-
-
