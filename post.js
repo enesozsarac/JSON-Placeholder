@@ -1,4 +1,5 @@
 const queryString = window.location.search;
+console.log(queryString);
 
 const newValue = queryString.split("=")[1];
 
@@ -12,7 +13,7 @@ async function getUser() {
   data.forEach((user) => {
     createCards(user);
   });
-  console.log(data);
+  // console.log(data);
 }
 
 const wrapper = document.querySelector(".wrapper");

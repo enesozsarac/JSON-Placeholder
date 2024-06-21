@@ -46,30 +46,6 @@ function createCards(user) {
 getUser();
 
 function showBtn(id, type) {
-  // if (btn === "address") {
-  //   const btn = document.querySelectorAll(".address");
-  //   if (btn[id - 1].classList.contains("display")) {
-  //     btn[id - 1].classList.remove("display");
-  //   } else {
-  //     btn[id - 1].classList.add("display");
-  //   }
-  // } else if (btn === "company") {
-  //   const btn = document.querySelectorAll(".company");
-  //   if (btn[id - 1].classList.contains("display")) {
-  //     btn[id - 1].classList.remove("display");
-  //   } else {
-  //     btn[id - 1].classList.add("display");
-  //   }
-  // } else if (btn === "contact") {
-  //   const btn = document.querySelectorAll(".contact");
-
-  //   if (btn[id - 1].classList.contains("display")) {
-  //     btn[id - 1].classList.remove("display");
-  //   } else {
-  //     btn[id - 1].classList.add("display");
-  //   }
-  // }
-
   const types = ["address", "company", "contact"];
 
   if (types.includes(type)) {
